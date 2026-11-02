@@ -1,28 +1,28 @@
-   name: Repo - create TOC of README
-   # description: https://github.com/technote-space/toc-generator
-   # README.md:
-   # <!-- START doctoc -->
-   # <!-- END doctoc -->
+name: Repo - create TOC of README
+# description: https://github.com/technote-space/toc-generator
+# README.md:
+# <!-- START doctoc -->
+# <!-- END doctoc -->
 
-   run-name: create README table of contents by ${{ github.actor }}
+run-name: create README table of contents by ${{ github.actor }}
 
-   on:
-     workflow_dispatch:
-     push:
-       paths:
-         - './README.md'
-         - './README_de.md'
-    
-   permissions:
-     contents: write
-    
-   jobs:
-     generateTOC:
-       name: TOC Generator
-       runs-on: ubuntu-latest
-       steps:
-         - uses: Zheng-Bote/gha-toc-generator@v4.3.4
-           with:
-             # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-             TARGET_PATHS: ./README.md
-             FOLDING: false
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "./README.md"
+      - "./README_de.md"
+
+permissions:
+  contents: write
+
+jobs:
+  generateTOC:
+    name: TOC Generator
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Zheng-Bote/gha-toc-generator@v4.3.4
+        with:
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_PATHS: ./README.md
+          FOLDING: false
