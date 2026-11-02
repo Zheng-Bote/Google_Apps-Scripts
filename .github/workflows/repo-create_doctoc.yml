@@ -10,7 +10,7 @@
      workflow_dispatch:
      push:
      paths: 
-        - './README.md', 
+        - './README.md' 
         - './README_de.md'
     
    permissions:
