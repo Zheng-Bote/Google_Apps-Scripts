@@ -7,8 +7,37 @@ This project consists of two coordinated components for automatically transferri
 
 ---
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Table of Contents](#table-of-contents)
+- [1. Google Apps Script (`exportGmailToMarkdown.js`)](#1-google-apps-script-exportgmailtomarkdownjs)
+  - [Subject Syntax](#subject-syntax)
+    - [Examples of email subject lines:](#examples-of-email-subject-lines)
+  - [Handling Email Attachments](#handling-email-attachments)
+  - [Generated Markdown Format](#generated-markdown-format)
+  - [Setup in Google Apps Script](#setup-in-google-apps-script)
+- [2. Go CLI Program (`gdrive-sync`)](#2-go-cli-program-gdrive-sync)
+  - [Safety Mechanisms](#safety-mechanisms)
+  - [Build](#build)
+  - [Command-Line Parameters](#command-line-parameters)
+  - [Usage Examples](#usage-examples)
+    - [Example 1: Download a single category folder (`Tech`) and save it locally](#example-1-download-a-single-category-folder-tech-and-save-it-locally)
+    - [Example 2: Synchronize the entire `Gmail_Snippets` folder (including `Snippets`, `Tech`, and `Private`)](#example-2-synchronize-the-entire-gmail_snippets-folder-including-snippets-tech-and-private)
+    - [Example 3: Dry run (`-dry-run`) and trash mode (`-trash`)](#example-3-dry-run--dry-run-and-trash-mode--trash)
+- [3. Create Google OAuth2 Client Credentials & Service Account](#3-create-google-oauth2-client-credentials--service-account)
+  - [Preparation (required for both variants)](#preparation-required-for-both-variants)
+  - [Variant A: OAuth 2.0 Client Credentials (Recommended for personal Google Drive)](#variant-a-oauth-20-client-credentials-recommended-for-personal-google-drive)
+    - [1. Configure the OAuth consent screen](#1-configure-the-oauth-consent-screen)
+    - [2. Create an OAuth client ID and download `credentials.json`](#2-create-an-oauth-client-id-and-download-credentialsjson)
+    - [3. One-time sign-in on first run](#3-one-time-sign-in-on-first-run)
+  - [Variant B: Service Account JSON File (For server / headless use without browser)](#variant-b-service-account-json-file-for-server--headless-use-without-browser)
+    - [1. Create the service account and download the JSON key](#1-create-the-service-account-and-download-the-json-key)
+    - [2. Important: Share the Google Drive folder with the service account](#2-important-share-the-google-drive-folder-with-the-service-account)
+- [Links](#links)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ---
 
