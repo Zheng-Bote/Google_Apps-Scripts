@@ -9,9 +9,9 @@
    on:
      workflow_dispatch:
      push:
-     paths: 
-        - './README.md', 
-        - './README_de.md'
+       paths:
+         - './README.md'
+         - './README_de.md'
     
    permissions:
      contents: write
